@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+:root {
+  --background: #F4EFEA;
+  --foreground: #383838;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: Arial, Helvetica, sans-serif;
+
+  /* App palette — keep all UI colors named, not inline.
+     Surfaces darken left→right (0 is deepest); ink layers go primary→dim;
+     accents are brand colors used for buttons/states. */
+  --color-surface-0: #0a0a0e;
+  --color-surface-1: #0c0c10;
+  --color-surface-2: #111722;
+  --color-surface-3: #141418;
+  --color-surface-3-hover: #171b22;
+  --color-surface-4: #1a1a20;
+  --color-divider: #383838;
+  --color-divider-header: #263241;
+  --color-ink-primary: #F4EFEA;
+  --color-ink-secondary: #A8B3C2;
+  --color-ink-muted: #A1A1A1;
+  --color-ink-dim: #5a5a5a;
+  --color-ink-dark: #383838;
+  --color-accent-blue: #6FC2FF;
+  --color-accent-teal: #53DBC9;
+  --color-accent-orange: #FF9538;
+  --color-accent-red: #FF7169;
+  --color-user-msg-bg: #1e2a3a;
+  --color-user-msg-shadow: #2a4a6a;
+  --color-danger-bg-dim: #2a1114;
+  --color-danger-text-soft: #FFB4AF;
+
+  /* Neo-brutalist offset shadows (hard, no blur, pinned to divider color). */
+  --shadow-brutal-sm: -2px 2px 0 0 var(--color-divider);
+  --shadow-brutal-md: -3px 3px 0 0 var(--color-divider);
+  --shadow-brutal-lg: -4px 4px 0 0 var(--color-divider);
+  --shadow-brutal-xl: -6px 6px 0 0 var(--color-divider);
+  --shadow-brutal-user: -2px 2px 0 0 var(--color-user-msg-shadow);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0c0c10;
+    --foreground: #F4EFEA;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.chat-markdown {
+  display: grid;
+  gap: 0.5rem;
+  white-space: normal;
+}
+
+.chat-markdown :where(p, ul, ol, pre, h1, h2, h3, h4) {
+  margin: 0;
+}
+
+.chat-markdown :where(h1, h2, h3, h4) {
+  color: #F4EFEA;
+  font-size: 0.8rem;
+  line-height: 1.25;
+  font-weight: 800;
+}
+
+.chat-markdown :where(ul, ol) {
+  display: grid;
+  gap: 0.25rem;
+  padding-left: 1.1rem;
+}
+
+.chat-markdown li {
+  padding-left: 0.1rem;
+}
+
+.chat-markdown a {
+  color: #6FC2FF;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.chat-markdown code {
+  border: 1px solid #383838;
+  border-radius: 2px;
+  background: #0a0a0e;
+  padding: 0.05rem 0.25rem;
+  color: #F4EFEA;
+  font-size: 0.72rem;
+}
+
+.chat-markdown pre {
+  max-width: 100%;
+  overflow-x: auto;
+  border: 1px solid #383838;
+  border-radius: 2px;
+  background: #0a0a0e;
+  padding: 0.5rem;
+}
+
+.chat-markdown pre code {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  white-space: pre;
+}

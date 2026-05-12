@@ -1,0 +1,47 @@
+{
+  "name": "motherduck-embedded-dives-template",
+  "version": "0.1.0",
+  "description": "AI-customizable embedded MotherDuck Dives template for Next.js.",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "node": "22.x"
+  },
+  "scripts": {
+    "dev": "npm run db:migrate && next dev",
+    "build": "next build",
+    "build:with-migrate": "npm run db:migrate && next build",
+    "start": "next start",
+    "lint": "eslint",
+    "db:migrate": "node scripts/migrate.mjs"
+  },
+  "dependencies": {
+    "@ai-sdk/anthropic": "^3.0.67",
+    "@ai-sdk/mcp": "^1.0.35",
+    "@ai-sdk/openai": "^3.0.51",
+    "@ai-sdk/react": "^3.0.151",
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "ai": "^6.0.149",
+    "next": "^16.2.4",
+    "next-auth": "^5.0.0-beta.31",
+    "postgres": "^3.4.9",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "^16.2.4",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  },
+  "overrides": {
+    "postcss": "^8.5.10"
+  }
+}
